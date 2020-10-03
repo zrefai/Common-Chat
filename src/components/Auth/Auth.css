@@ -1,0 +1,35 @@
+.form-container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-container {
+  margin-top: 7px;
+}
+
+.Sign-In-Text {
+  font-weight: bold;
+  font-size: 35px;
+  color: #4384ff;
+}
+
+.Register-Here-Text {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.input {
+  margin-bottom: 20px;
+  font-size: 20px;
+  padding: 15px;
+  width: 350px;
+  border-radius: 30px;
+  border-width: 1px;
+  outline: none;
+}
+
+.input::placeholder {
+  font-style: italic;
+}

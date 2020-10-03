@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
+import Button from "../Buttons/Button";
+import Input from "./Input";
+import "./Auth.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -15,33 +19,30 @@ const SignIn = () => {
 
   return (
     <div>
-      <h1> Welcome to Common Chat</h1>
-      <p>A web messaging app created by Zaki Refai</p>
-      <p>Login to access your account</p>
-      <form className="" onSubmit={(e) => handleLogIn(e)}>
-        <input
-          type="email"
-          name="email"
-          id="email"
+      <Header />
+      <div className="form-container">
+        <p className="Sign-In-Text">Sign In</p>
+        <Input
+          kind="email"
           placeholder="Email"
-          autoComplete="off"
           value={email}
-          onChange={(e) => handleInput(e, setEmail)}
+          handler={handleInput}
+          setState={setEmail}
         />
-        <input
-          type="password"
-          name="password"
-          id="password"
+        <Input
+          kind="password"
           placeholder="Password"
-          autoComplete="off"
           value={password}
-          onChange={(e) => handleInput(e, setPassword)}
+          handler={handleInput}
+          setState={setPassword}
         />
-        <button>Log in</button>
-      </form>
-      <p>
-        Don't have an account? <Link to="/register">Register here</Link>
-      </p>
+        <div className="sign-in-container">
+          <Button>Sign In</Button>
+          <p className="Register-Here-Text">
+            Don't have an account? <Link to="/register">Register here</Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

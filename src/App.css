@@ -2,37 +2,47 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: #4e4e4f;
-  min-height: 100vh;
+  background-color: "white";
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  font-family: "Adobe Clean";
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: "Adobe Clean";
+  src: url("./fonts/AdobeClean-It.eot");
+  src: local("AdobeClean-It"),
+    url("./fonts/AdobeClean-It.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/AdobeClean-It.woff2") format("woff2"),
+    url("./fonts/AdobeClean-It.woff") format("woff"),
+    url("./fonts/AdobeClean-It.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: "Adobe Clean";
+  src: url("./fonts/AdobeClean-Regular.eot");
+  src: local("AdobeClean-Regular"),
+    url("./fonts/AdobeClean-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/AdobeClean-Regular.woff2") format("woff2"),
+    url("./fonts/AdobeClean-Regular.woff") format("woff"),
+    url("./fonts/AdobeClean-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: "Adobe Clean";
+  src: url("./fonts/AdobeClean-Bold.eot");
+  src: local("AdobeClean-Bold"),
+    url("./fonts/AdobeClean-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/AdobeClean-Bold.woff2") format("woff2"),
+    url("./fonts/AdobeClean-Bold.woff") format("woff"),
+    url("./fonts/AdobeClean-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }

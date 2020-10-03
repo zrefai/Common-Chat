@@ -1,0 +1,40 @@
+.Home-Container {
+  margin-top: 200px;
+}
+
+.Welcome-To {
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.By-Zaki {
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.button-container {
+  margin-top: 115px;
+  flex-direction: row;
+}
+
+.button {
+  width: 160px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: white;
+  color: #4384ff;
+  padding: 15px 32px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 30px;
+  border-width: 1px;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #4384ff;
+  color: white;
+}

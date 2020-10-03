@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Logo from "../Logo/Logo";
+import Button from "../Buttons/Buttons";
 
 const Home = () => {
   return (
@@ -9,8 +10,8 @@ const Home = () => {
       <Logo size={65} />
       <div className="By-Zaki">A web chat app created by Zaki Refai</div>
       <div className="button-container">
-        <button className="button">Sign In</button>
-        <button className="button">Register</button>
+        <Button>Sign In</Button>
+        <Button>Register</Button>
       </div>
     </div>
   );

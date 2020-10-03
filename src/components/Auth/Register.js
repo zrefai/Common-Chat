@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Input from "./Input";
+import Button from "../Buttons/Button";
+import Header from "../Header/Header";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -11,37 +15,37 @@ const Register = () => {
 
   return (
     <div>
-      <h1>Register</h1>
-      <h2>Register for an account</h2>
-      <form>
-        <input
-          type="text"
-          name="username"
-          id="username"
+      <Header />
+      <div className="form-container">
+        <p className="header-text">Register</p>
+        <Input
+          kind="username"
           placeholder="Username"
-          autoComplete="off"
           value={username}
-          onChange={(e) => handleInput(e, setUsername)}
+          handler={handleInput}
+          setState={setUsername}
         />
-        <input
-          type="text"
-          name="email"
-          id="email"
+        <Input
+          kind="email"
           placeholder="Email"
-          autoComplete="off"
           value={email}
-          onChange={(e) => handleInput(e, setEmail)}
+          handler={handleInput}
+          setState={setEmail}
         />
-        <input
-          type="text"
-          name="password"
-          id="password"
+        <Input
+          kind="password"
           placeholder="Password"
-          autoComplete="off"
           value={password}
-          onChange={(e) => handleInput(e, setPassword)}
+          handler={handleInput}
+          setState={setPassword}
         />
-      </form>
+        <div className="action-button-container">
+          <Button>Register</Button>
+          <p className="action-text">
+            Already have an account? <Link to="/signin">Sign in here</Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

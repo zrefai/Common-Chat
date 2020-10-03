@@ -21,7 +21,7 @@ const SignIn = () => {
     <div>
       <Header />
       <div className="form-container">
-        <p className="Sign-In-Text">Sign In</p>
+        <p className="header-text">Sign In</p>
         <Input
           kind="email"
           placeholder="Email"
@@ -36,9 +36,9 @@ const SignIn = () => {
           handler={handleInput}
           setState={setPassword}
         />
-        <div className="sign-in-container">
+        <div className="action-button-container">
           <Button>Sign In</Button>
-          <p className="Register-Here-Text">
+          <p className="action-text">
             Don't have an account? <Link to="/register">Register here</Link>
           </p>
         </div>

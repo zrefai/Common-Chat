@@ -5,17 +5,17 @@
   align-items: center;
 }
 
-.sign-in-container {
+.action-button-container {
   margin-top: 7px;
 }
 
-.Sign-In-Text {
+.header-text {
   font-weight: bold;
   font-size: 35px;
   color: #4384ff;
 }
 
-.Register-Here-Text {
+.action-text {
   font-weight: bold;
   font-size: 15px;
 }
@@ -23,8 +23,9 @@
 .input {
   margin-bottom: 20px;
   font-size: 20px;
-  padding: 15px;
+  padding: 15px 15px 15px 25px;
   width: 350px;
+  justify-content: center;
   border-radius: 30px;
   border-width: 1px;
   outline: none;

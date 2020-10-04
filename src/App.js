@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
 import { ROUTES } from "./helpers/constants";
+import { useAuth } from "./hooks";
 import SignIn from "./pages/Auth/SignIn";
 import Register from "./pages/Auth/Register";
 import Home from "./pages/Home/Home";
@@ -14,7 +15,7 @@ const NoMatch = ({ location }) => (
 );
 
 function App() {
-  const user = null;
+  const { user } = useAuth();
 
   return (
     <div className="App">

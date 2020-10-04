@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../Buttons";
-import Form from "../Form";
-import Header from "../Header/Header";
+import Button from "../../components/Buttons";
+import Form from "../../components/Form";
+import Header from "../../components/Header/Header";
 
 const Register = () => {
   const [username, setUsername] = useState("");

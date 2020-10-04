@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import SignIn from "./components/Auth/SignIn";
-import Register from "./components/Auth/Register";
-import Home from "./components/Home/Home";
+import SignIn from "./pages/Auth/SignIn";
+import Register from "./pages/Auth/Register";
+import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 
 const NoMatch = ({ location }) => (

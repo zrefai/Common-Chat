@@ -11,6 +11,17 @@ export const Title = styled.p`
   color: #4384ff;
 `;
 
+export const Error = styled.div`
+  background: red;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 30px;
+`;
+
 export const Base = styled.form`
   display: flex;
   flex-direction: column;

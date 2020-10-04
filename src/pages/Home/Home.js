@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Logo from "../Logo/Logo";
-import Button from "../Buttons";
+import Logo from "../../components/Logo/Logo";
+import Button from "../../components/Buttons";
 
 const Home = () => {
   return (

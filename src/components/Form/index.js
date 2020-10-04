@@ -2,6 +2,7 @@ import React from "react";
 import {
   Container,
   Title,
+  Error,
   Base,
   Input,
   ActionContainer,
@@ -15,6 +16,10 @@ export default function Form({ children, ...otherProps }) {
 
 Form.Title = function FormTitle({ children, ...otherProps }) {
   return <Title {...otherProps}>{children}</Title>;
+};
+
+Form.Error = function FormError({ children, ...otherProps }) {
+  return <Error {...otherProps}>{children}</Error>;
 };
 
 Form.Base = function FormBase({ children, ...otherProps }) {

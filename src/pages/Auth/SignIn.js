@@ -20,12 +20,10 @@ const SignIn = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        // push to page
         history.push("/");
       })
       .catch((error) => {

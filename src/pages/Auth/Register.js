@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { FirebaseContext } from "../../context/firebaseContext";
 import Button from "../../components/Buttons";
 import Form from "../../components/Form";
 import Header from "../../components/Header/Header";
 
 const Register = () => {
+  const { firebase } = useContext(FirebaseContext);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const history = useHistory();
+
+  const isInvalid = password === "" || email === "" || username === "";
 
   const handleInput = (e, setFunc) => {
     setFunc(e.target.value);
@@ -15,7 +21,21 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log(username, email, password);
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        result.user.updateProfile({ displayName: username });
+      })
+      .then(() => {
+        history.push("/");
+      })
+      .catch((error) => {
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setError(error.message);
+      });
   };
 
   return (
@@ -23,6 +43,7 @@ const Register = () => {
       <Header />
       <Form>
         <Form.Title>Register</Form.Title>
+        {error && <Form.Error>{error}</Form.Error>}
         <Form.Base onSubmit={handleRegister}>
           <Form.Input
             type="username"
@@ -52,7 +73,7 @@ const Register = () => {
             onChange={(e) => handleInput(e, setPassword)}
           />
           <Form.ActionContainer>
-            <Button.Auth>Register</Button.Auth>
+            <Button.Auth disabled={isInvalid}>Register</Button.Auth>
             <Form.ActionText>
               Have an account? You can sign in{" "}
               <Form.Link to="/signin">here</Form.Link>

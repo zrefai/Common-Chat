@@ -2,7 +2,10 @@ import styled from "styled-components/macro";
 import { Link as RouterLink } from "react-router-dom";
 
 export const Container = styled.div`
-  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
 `;
 
 export const Title = styled.p`
@@ -15,11 +18,13 @@ export const Error = styled.div`
   background: red;
   font-size: 15px;
   font-weight: bold;
+  border-radius: 30px;
   color: white;
-  margin-top: 15px;
+  min-width: 300px;
+  max-width: 300px;
   margin-bottom: 15px;
   padding: 10px;
-  border-radius: 30px;
+  justify-content: center;
 `;
 
 export const Base = styled.form`

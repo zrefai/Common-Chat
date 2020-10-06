@@ -1,7 +1,6 @@
 import React from "react";
 import "./Bubbles.css";
 import blueSMS from "../../images/blueSMS.png";
-import greySMS from "../../images/greySMS.png";
 import purpleSMS from "../../images/purpleSMS.png";
 
 const Bubbles = () => {

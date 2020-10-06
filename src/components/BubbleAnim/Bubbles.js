@@ -2,10 +2,11 @@ import React from "react";
 import "./Bubbles.css";
 import blueSMS from "../../images/blueSMS.png";
 import greySMS from "../../images/greySMS.png";
+import purpleSMS from "../../images/purpleSMS.png";
 
 const Bubbles = () => {
   const randomNumber = (a, b) => {
-    return Math.floor(Math.random() * b) + a;
+    return Math.floor(Math.random() * (b - a + 1)) + a;
   };
 
   const generateSMSBubbles = (size) => {
@@ -24,11 +25,11 @@ const Bubbles = () => {
         {Array(size)
           .fill()
           .map((_, i) => {
-            const dim = randomNumber(20, 85) + "px";
-            const loc = parseFloat(randomNumber(0, 100)).toFixed(2) + "%";
-            const delay = randomNumber(0, 10) + "s";
-            const dur = randomNumber(0, 10) + "s";
-            const randIM = randomNumber(0, 2) ? blueSMS : greySMS;
+            const dim = randomNumber(50, 95) + "px";
+            const loc = parseFloat(randomNumber(0, 85)).toFixed(2) + "%";
+            const delay = randomNumber(0, 20) + "s";
+            const dur = randomNumber(7, 20) + "s";
+            const randIM = randomNumber(0, 2) ? blueSMS : purpleSMS;
             return (
               <li key={i} style={styles(dim, loc, delay, dur)}>
                 <img src={randIM} alt="SMS" />
@@ -39,49 +40,7 @@ const Bubbles = () => {
     );
   };
 
-  return (
-    <div>
-      {" "}
-      <ul className="bubbles">
-        <li>
-          <img src={blueSMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={greySMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={blueSMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={greySMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={blueSMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={greySMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={blueSMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={greySMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={blueSMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={greySMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={blueSMS} alt="SMS" />
-        </li>
-        <li>
-          <img src={greySMS} alt="SMS" />
-        </li>
-      </ul>{" "}
-    </div>
-  );
+  return <div>{generateSMSBubbles(25)}</div>;
 };
 
 export default Bubbles;

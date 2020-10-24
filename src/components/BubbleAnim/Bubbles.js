@@ -39,7 +39,7 @@ const Bubbles = () => {
     );
   };
 
-  return <div>{generateSMSBubbles(25)}</div>;
+  return <div>{generateSMSBubbles(20)}</div>;
 };
 
 export default Bubbles;

@@ -30,7 +30,7 @@ const Header = () => {
     return (
       <div className="container">
         <div style={{ flex: 1 }} />
-        <div style={{ flex: 2 }}>{renderLogo()}</div>
+        <div style={{ flex: 2, justifyContent: "center" }}>{renderLogo()}</div>
         <div style={{ flex: 1 }}>{renderLogOut()}</div>
       </div>
     );

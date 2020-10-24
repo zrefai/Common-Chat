@@ -34,7 +34,7 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <Header />
       <Form>
         <Form.Title>Sign In</Form.Title>

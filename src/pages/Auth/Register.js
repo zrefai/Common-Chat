@@ -8,9 +8,11 @@ import Header from "../../components/Header/Header";
 const Register = () => {
   const { firebase } = useContext(FirebaseContext);
   const [username, setUsername] = useState("");
+  const [uid, setUid] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const database = firebase.database();
   const history = useHistory();
 
   const isInvalid = password === "" || email === "" || username === "";
@@ -24,8 +26,15 @@ const Register = () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        result.user.updateProfile({ displayName: username });
+      .then(function success(user) {
+        // result.user.updateProfile({ displayName: username });
+        console.log("Uid: ", user.uid);
+        // database.ref("/users/" + user.uid).set({
+        //   username: username,
+        //   email: email,
+        //   password: password,
+        //   lobbies: [],
+        // });
       })
       .then(() => {
         history.push("/");
@@ -39,7 +48,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <Header />
       <Form>
         <Form.Title>Register</Form.Title>

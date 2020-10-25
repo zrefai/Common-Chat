@@ -7,6 +7,7 @@ import { useAuth } from "./hooks";
 import SignIn from "./pages/Auth/SignIn";
 import Register from "./pages/Auth/Register";
 import Home from "./pages/Home/Home";
+import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer";
 import Dashboard from "./pages/Dash/Dashboard";
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <Header />
         <Switch>
           <IsUserRedirect
             user={user}
@@ -50,8 +52,8 @@ function App() {
           </ProtectedRoute>
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

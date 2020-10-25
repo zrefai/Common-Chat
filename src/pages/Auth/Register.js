@@ -8,11 +8,9 @@ import Header from "../../components/Header/Header";
 const Register = () => {
   const { firebase } = useContext(FirebaseContext);
   const [username, setUsername] = useState("");
-  const [uid, setUid] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const database = firebase.database();
   const history = useHistory();
 
   const isInvalid = password === "" || email === "" || username === "";
@@ -26,16 +24,6 @@ const Register = () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(function success(user) {
-        // result.user.updateProfile({ displayName: username });
-        console.log("Uid: ", user.uid);
-        // database.ref("/users/" + user.uid).set({
-        //   username: username,
-        //   email: email,
-        //   password: password,
-        //   lobbies: [],
-        // });
-      })
       .then(() => {
         history.push("/");
       })
@@ -48,49 +36,52 @@ const Register = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
-      <Header />
-      <Form>
-        <Form.Title>Register</Form.Title>
-        {error && <Form.Error>{error}</Form.Error>}
-        <Form.Base onSubmit={handleRegister}>
-          <Form.Input
-            type="username"
-            name="username"
-            id="username"
-            autoComplete="off"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => handleInput(e, setUsername)}
-          />
-          <Form.Input
-            type="email"
-            name="email"
-            id="email"
-            autoComplete="off"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => handleInput(e, setEmail)}
-          />
-          <Form.Input
-            type="password"
-            name="password"
-            id="password"
-            autoComplete="off"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => handleInput(e, setPassword)}
-          />
-          <Form.ActionContainer>
-            <Button.Auth disabled={isInvalid}>Register</Button.Auth>
-            <Form.ActionText>
-              Have an account? You can sign in{" "}
-              <Form.Link to="/signin">here</Form.Link>
-            </Form.ActionText>
-          </Form.ActionContainer>
-        </Form.Base>
-      </Form>
-    </div>
+    <>
+      <div style={{ display: "flex", width: "100%", height: "100%", justifyContent: 'center' }}>
+        <div style={{ alignSelf: "center" }}>
+          <Form>
+            <Form.Title>Register</Form.Title>
+            {error && <Form.Error>{error}</Form.Error>}
+            <Form.Base onSubmit={handleRegister}>
+              <Form.Input
+                type="username"
+                name="username"
+                id="username"
+                autoComplete="off"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => handleInput(e, setUsername)}
+              />
+              <Form.Input
+                type="email"
+                name="email"
+                id="email"
+                autoComplete="off"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => handleInput(e, setEmail)}
+              />
+              <Form.Input
+                type="password"
+                name="password"
+                id="password"
+                autoComplete="off"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => handleInput(e, setPassword)}
+              />
+              <Form.ActionContainer>
+                <Button.Auth disabled={isInvalid}>Register</Button.Auth>
+                <Form.ActionText>
+                  Have an account? You can sign in{" "}
+                  <Form.Link to="/signin">here</Form.Link>
+                </Form.ActionText>
+              </Form.ActionContainer>
+            </Form.Base>
+          </Form>
+        </div>
+      </div>
+    </>
   );
 };
 

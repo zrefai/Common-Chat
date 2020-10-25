@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../../components/Header/Header";
+import PageContainer from "../../components/Container"
 
 const Dashboard = () => {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
-      <Header />
-      Dashboard
-    </div>
+    <>
+      <PageContainer>
+        <div style={{alignSelf: "center"}}>Hello</div>
+      </PageContainer>
+    </>
   );
 };
 

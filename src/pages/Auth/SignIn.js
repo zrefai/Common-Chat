@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { FirebaseContext } from "../../context/firebaseContext";
 import Button from "../../components/Buttons";
 import Form from "../../components/Form";
-import Header from "../../components/Header/Header";
+import PageContainer from "../../components/Container"
 
 const SignIn = () => {
   const { firebase } = useContext(FirebaseContext);
@@ -34,8 +34,9 @@ const SignIn = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
-      <Header />
+    <>
+    <PageContainer>
+      <div style={{alignSelf: "center"}}>
       <Form>
         <Form.Title>Sign In</Form.Title>
         {error && <Form.Error>{error}</Form.Error>}
@@ -67,7 +68,9 @@ const SignIn = () => {
           </Form.ActionContainer>
         </Form.Base>
       </Form>
-    </div>
+      </div>
+    </PageContainer>
+    </>
   );
 };
 

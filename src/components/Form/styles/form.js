@@ -4,8 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
+  margin-bottom: 100px
 `;
 
 export const Title = styled.p`

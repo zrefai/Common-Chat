@@ -14,8 +14,8 @@ const Home = () => {
 
   return (
     <>
-      <Bubbles />
-      <div className="Home-Container">
+      <Bubbles/>
+      <div className="Home">
         <div className="Welcome-To">Welcome to</div>
         <Logo size={65} />
         <div className="By-Zaki">A web chat app created by Zaki Refai</div>

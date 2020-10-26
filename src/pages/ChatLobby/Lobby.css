@@ -5,13 +5,3 @@ main {
   overflow: scroll;
   flex-direction: column;
 }
-
-input {
-  /* line-height: 1.5;
-  font-size: 1.5rem;
-  color: white;
-  outline: none;
-  border: none;
-  padding: 0 10px;
-  margin-bottom: 25px; */
-}

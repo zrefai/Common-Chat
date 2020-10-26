@@ -8,8 +8,7 @@ import SignIn from "./pages/Auth/SignIn";
 import Register from "./pages/Auth/Register";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer";
-import Dashboard from "./pages/Dash/Dashboard";
+import Lobby from "./pages/ChatLobby/Lobby";
 
 const NoMatch = ({ location }) => (
   <div>No route match for {location.pathname}</div>
@@ -25,7 +24,7 @@ function App() {
         <Switch>
           <IsUserRedirect
             user={user}
-            loggedInPath={ROUTES.DASHBOARD}
+            loggedInPath={ROUTES.LOBBY}
             exact
             path={ROUTES.HOME}
           >
@@ -33,7 +32,7 @@ function App() {
           </IsUserRedirect>
           <IsUserRedirect
             user={user}
-            loggedInPath={ROUTES.DASHBOARD}
+            loggedInPath={ROUTES.LOBBY}
             exact
             path={ROUTES.SIGNIN}
           >
@@ -41,18 +40,17 @@ function App() {
           </IsUserRedirect>
           <IsUserRedirect
             user={user}
-            loggedInPath={ROUTES.DASHBOARD}
+            loggedInPath={ROUTES.LOBBY}
             exact
             path={ROUTES.REGISTER}
           >
             <Register />
           </IsUserRedirect>
-          <ProtectedRoute user={user} exact path={ROUTES.DASHBOARD}>
-            <Dashboard />
+          <ProtectedRoute user={user} exact path={ROUTES.LOBBY}>
+            <Lobby />
           </ProtectedRoute>
           <Route component={NoMatch} />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Logo from "../../components/Logo/Logo";
 import Button from "../../components/Buttons";
 import Bubbles from "../../components/BubbleAnim/Bubbles";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const history = useHistory();
@@ -28,6 +29,7 @@ const Home = () => {
           </Button.WelcomeAuth>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

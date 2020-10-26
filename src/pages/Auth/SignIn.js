@@ -4,6 +4,7 @@ import { FirebaseContext } from "../../context/firebaseContext";
 import Button from "../../components/Buttons";
 import Form from "../../components/Form";
 import PageContainer from "../../components/Container"
+import Footer from "../../components/Footer/Footer";
 
 const SignIn = () => {
   const { firebase } = useContext(FirebaseContext);
@@ -70,6 +71,7 @@ const SignIn = () => {
       </Form>
       </div>
     </PageContainer>
+    <Footer />
     </>
   );
 };

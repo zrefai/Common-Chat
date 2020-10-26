@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import { FirebaseContext } from "../../context/firebaseContext";
 import Button from "../../components/Buttons";
 import Form from "../../components/Form";
-import Header from "../../components/Header/Header";
+import PageContainer from "../../components/Container"
+import Footer from "../../components/Footer/Footer";
 
 const Register = () => {
   const { firebase } = useContext(FirebaseContext);
@@ -24,6 +25,11 @@ const Register = () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then(function(result){
+        return result.user.updateProfile({
+          displayName: username
+        })
+      })
       .then(() => {
         history.push("/");
       })
@@ -37,7 +43,7 @@ const Register = () => {
 
   return (
     <>
-      <div style={{ display: "flex", width: "100%", height: "100%", justifyContent: 'center' }}>
+      <PageContainer>
         <div style={{ alignSelf: "center" }}>
           <Form>
             <Form.Title>Register</Form.Title>
@@ -80,7 +86,8 @@ const Register = () => {
             </Form.Base>
           </Form>
         </div>
-      </div>
+      </PageContainer>
+      <Footer/>
     </>
   );
 };

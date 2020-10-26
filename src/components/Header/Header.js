@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   const renderLogOut = () => {
-    if (location.pathname !== ROUTES.DASHBOARD) return null;
+    if (location.pathname !== ROUTES.LOBBY) return null;
     return <Button.Auth onClick={(e) => handleLogOut(e)}>Log Out</Button.Auth>;
   };
 

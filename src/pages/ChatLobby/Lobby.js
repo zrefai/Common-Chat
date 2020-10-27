@@ -41,7 +41,7 @@ const Dashboard = () => {
 
   return (<>
     <ChatBoard>
-      {messages && messages.reverse().map(msg => <Message key={msg.id} message={msg} />)}
+      {messages && messages.slice(0).reverse().map(msg => <Message key={msg.id} message={msg} />)}
       <div ref={ref}/>
     </ChatBoard>
     <ChatForm onSubmit={sendMessage}>

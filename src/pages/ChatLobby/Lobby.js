@@ -18,6 +18,11 @@ const Dashboard = () => {
     ref.current.scrollIntoView({behavior: "smooth"})
   }
 
+  const onMessageChange = (e) => {
+    e.preventDefault()
+    setMessage(e.target.value)
+  }
+
   const sendMessage = async (e) => {
     e.preventDefault();
 
@@ -40,7 +45,7 @@ const Dashboard = () => {
       <div ref={ref}/>
     </ChatBoard>
     <ChatForm onSubmit={sendMessage}>
-      <ChatForm.Input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Say something" />
+      <ChatForm.Input value={message} onChange={(e) => onMessageChange(e)} placeholder="Say something" />
       <ChatForm.Button type="submit" disabled={!message}>Send</ChatForm.Button>
     </ChatForm>
   </>)

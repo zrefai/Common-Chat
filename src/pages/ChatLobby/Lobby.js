@@ -1,6 +1,5 @@
-import React, { useRef, useState }from "react";
+import React, { useEffect, useRef, useState }from "react";
 import firebase from "firebase/app"
-import "./Lobby.css"
 import ChatForm from "../../components/ChatForm"
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { Message } from "../../components/ChatMessage"
@@ -15,26 +14,30 @@ const Dashboard = () => {
   const [messages] = useCollectionData(query, { idField: 'id' });
   const [message, setMessage] = useState('');
 
+  const scrollToBottom = () => {
+    ref.current.scrollIntoView({behavior: "smooth"})
+  }
+
   const sendMessage = async (e) => {
     e.preventDefault();
 
-    const { uid, displayName} = auth.currentUser;
-
+    const { uid } = auth.currentUser;
+    
     await messagesRef.add({
       text: message,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      createdBy: displayName,
+      createdBy: auth.currentUser.displayName,
       uid,
     })
-
     setMessage('');
-    ref.current.scrollIntoView({ behavior: 'smooth' });
   }
+
+  useEffect(scrollToBottom,[messages])
 
   return (<>
     <ChatBoard>
       {messages && messages.reverse().map(msg => <Message key={msg.id} message={msg} />)}
-      <span ref={ref}></span>
+      <div ref={ref}/>
     </ChatBoard>
     <ChatForm onSubmit={sendMessage}>
       <ChatForm.Input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Say something" />

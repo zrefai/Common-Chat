@@ -1,4 +1,8 @@
-.container {
-  display: flex;
+.header {
+  align-self: center;
+  justify-content: center;
+  width: 50%;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
 }

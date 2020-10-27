@@ -16,8 +16,8 @@ const Header = () => {
   };
 
   const renderLogOut = () => {
-    if (location.pathname !== ROUTES.LOBBY) return null;
-    return <Button.Auth onClick={(e) => handleLogOut(e)}>Log Out</Button.Auth>;
+    if (location.pathname !== ROUTES.LOBBY) return <div style={{width: '100px'}}/>;
+    return <Button.Auth style={{margin: '0px'}}onClick={(e) => handleLogOut(e)}>Log Out</Button.Auth>;
   };
 
   const renderLogo = () => {
@@ -28,10 +28,10 @@ const Header = () => {
   const renderHeader = () => {
     if (location.pathname === ROUTES.HOME) return null;
     return (
-      <div className="container">
-        <div style={{ flex: 1 }} />
-        <div style={{ flex: 2, justifyContent: "center" }}>{renderLogo()}</div>
-        <div style={{ flex: 1 }}>{renderLogOut()}</div>
+      <div className="header">
+        <div style={{width: '100px'}}/>
+        {renderLogo()}
+        {renderLogOut()}
       </div>
     );
   };

@@ -24,6 +24,7 @@ export const Error = styled.div`
   margin-bottom: 15px;
   padding: 10px;
   justify-content: center;
+  align-self: center;
 `;
 
 export const Base = styled.form`

@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      You can view other projects on my Github or Personal Website
+      You can view other projects on my <a href="https://github.com/zrefai">Github</a>
     </div>
   );
 };

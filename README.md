@@ -1,68 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Common Chat
 
-In the project directory, you can run:
+A React app built with Google's Firebase that allows users to message each other in real time. https://common-chat-31864.web.app/lobby
 
-### `yarn start`
+## Goal of the Project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To learn more about full-stack development. I decided to learn about Firestore and implement it as my backend for this project. I also wanted to go through the understand the process of website deployement and maintenance. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Details
 
-### `yarn test`
+### How does it work?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+With a high level explanation, the app uses Firestore to authenticate users, store any incoming messages recieved during regular use of the website, and retrieve new messages in real time.
 
-### `yarn build`
+#### General Chatting
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The main idea behind Common Chat is that you can talk to anybody currently signed into the website. When a user registers for an account they are immediately brought to the chat lobby. At which point they are able to message back and forth with other users. There are currently no private lobbies (may be added in a future update) as I just wanted to experiment with React and Firestore at a basic level.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Some cool things to note
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app's routes are protected. This means that an individual is not able to access the chat lobby unless they are signed into the app. This also works the other way around; a user cannot exit out of the chat lobby unless they logout. These protected routes add a small layer of security.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I did some heavy research on Firestore security rules, and the app comes with another layer of security in the backend. This security layer determines if a user has read and write priviledges. Unauthorized users or users not currently signed in will not be able to read any incoming messages or send messages in the chat lobby. 
